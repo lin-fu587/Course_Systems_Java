@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingTop="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_download"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/pdfView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="0dp"
+        android:background="#00FFFFFF"
+        android:drawableBottom="@drawable/icon_download"
+        android:insetTop="0dp"
+        android:insetBottom="-4dp"
+        android:text="download" />
+
+    <Button
+        android:id="@+id/btn_return"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/pdfView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#00FFFFFF"
+        android:drawableBottom="@drawable/icon_return"
+        android:insetTop="0dp"
+        android:insetBottom="-4dp"
+        android:text="return" />
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_toStartOf="@+id/btn_download"
+        android:layout_toLeftOf="@+id/btn_download"
+        android:layout_toEndOf="@+id/btn_return"
+        android:layout_toRightOf="@+id/btn_return"
+        android:background="@color/cardview_dark_background"
+        android:gravity="center"
+        android:text="View PDF"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_header" />
+
+    <LinearLayout
+        android:id="@+id/ll_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cc000000"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="0%"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+
+</RelativeLayout>
